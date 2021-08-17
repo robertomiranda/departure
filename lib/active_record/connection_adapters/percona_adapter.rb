@@ -128,7 +128,7 @@ module ActiveRecord
       # @param column_name [String, Symbol]
       # @param options [Hash] optional
       def add_index(table_name, column_name, options = {})
-        if ActiveRecord::VERSION::STRING >= '6.1'
+        if false && ActiveRecord::VERSION::STRING >= '6.1'
           index, algorithm, if_not_exists = add_index_options(table_name, column_name, options)
           create_index = CreateIndexDefinition.new(index, algorithm, if_not_exists)
           execute schema_creation.accept(create_index)
